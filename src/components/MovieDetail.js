@@ -13,18 +13,15 @@ class MovieDetail extends React.Component {
         const { location } = this.props;
         if (location.state){
             return (
-                <div className="movie">
+                <div className="movie_detail">
                     <img src={location.state.image} alt={location.state.title} title={location.state.title} />
-                    <div className="movie__column">
-                        <h3 className="movie__title">{location.state.title}</h3>
-                        <h5 className="movie__year">{location.state.year}</h5>
-                        <ul className="movie__genres">
-                            {location.state.genres.map((genre, index) => {
-                                return <li key={index} className="genres__genre">{genre}</li>
-                            })}
-                        </ul>
-                        <p className="movie__summary">{location.state.summary.slice(0, 130)}...</p>
-                    </div>
+                    <h3 className="movie_detail__title">{location.state.title} ({location.state.year})</h3>
+                    <ul className="movie_detail__genres">
+                        {location.state.genres.map((genre, index) => {
+                            return <li key={index} className="genres__genre">{genre}</li>
+                        })}
+                    </ul>
+                    <p className="movie_detail__summary">{location.state.summary.slice(0, 130)}...</p>
                 </div>
             );
         } else {
