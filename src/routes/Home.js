@@ -10,14 +10,14 @@ class Home extends React.Component {
     movies: []
   };
 
-getMovies = async () => {
-  const {data: {data: {movies}}} = await axios.get('https://yts.mx/api/v2/list_movies.json?sort_by=rating');
-  this.setState({movies, isLoading: false})
-}
+  getMovies = async () => {
+    const {data: {data: {movies}}} = await axios.get('https://yts.mx/api/v2/list_movies.json?sort_by=rating');
+    this.setState({movies, isLoading: false})
+  }
 
-componentDidMount() {
-  this.getMovies();
-}
+  componentDidMount() {
+    this.getMovies();
+  }
 
   render() {
     const { isLoading, movies } = this.state;
