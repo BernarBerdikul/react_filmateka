@@ -21,7 +21,7 @@ class MovieDetail extends React.Component {
                             return <li key={index} className="genres__genre">{genre}</li>
                         })}
                     </ul>
-                    <p className="movie_detail__summary">{location.state.summary.slice(0, 130)}...</p>
+                    <p className="movie_detail__summary">{location.state.summary}</p>
                 </div>
             );
         } else {
